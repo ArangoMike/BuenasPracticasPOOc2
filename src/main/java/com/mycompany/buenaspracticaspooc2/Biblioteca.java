@@ -10,7 +10,7 @@ import java.util.ArrayList;
  */
 public class Biblioteca {
     //Create a private arraylist of Cancion objects
-    private ArrayList<Cancion> canciones = new ArrayList<Cancion>();
+    protected ArrayList<Cancion> canciones = new ArrayList<Cancion>();
 
     //Getter and setter
     public ArrayList<Cancion> getCanciones() {
