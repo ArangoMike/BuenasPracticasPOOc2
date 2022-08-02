@@ -1,3 +1,5 @@
+package com.mycompany.buenaspracticaspooc2;
+
 import java.util.Scanner;
 
 public class Reader { //Clase de leer, mejorada para no depender de throws.
