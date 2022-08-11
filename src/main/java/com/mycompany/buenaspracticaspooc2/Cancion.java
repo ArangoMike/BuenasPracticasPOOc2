@@ -85,12 +85,16 @@ public class Cancion {
     
         public void setInfo(String info) {
             this.info = info;
-        }   
-
-    @Override
-    public String toString() {
-        return "Cancion{" + "title=" + title + ", id=" + id + ", date=" + date + ", duration=" + duration + ", genre=" + genre + ", cover=" + cover + ", info=" + info + '}';
+        }
+    
+    // Create a method to print a song
+    public void printSong() {
+        System.out.println("Titulo: " + title);
+        System.out.println("ID: " + id);
+        System.out.println("Fecha: " + date);
+        System.out.println("Duración: " + duration);
+        System.out.println("Género: " + genre);
+        System.out.println("Carátula: " + cover);
+        System.out.println("Descripción: " + info);
     }
-        
-        
 }
