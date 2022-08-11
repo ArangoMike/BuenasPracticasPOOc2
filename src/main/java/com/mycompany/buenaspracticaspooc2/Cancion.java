@@ -4,21 +4,18 @@ package com.mycompany.buenaspracticaspooc2;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-/**
- *
- * @author maicol
- */
+
 public class Cancion {
         //titulo, identificador, fecha, duración, genero, caratula y una descripción corta.
         private String title;
         private int id;
         private LocalDate date;
         private LocalTime duration;
-        private String genre;
+        private Genres genre;
         private String cover;
         private String info;
     
-        public Cancion(String title, int id, LocalDate date, LocalTime duration, String genre, String cover, String info) {
+        public Cancion(String title, int id, LocalDate date, LocalTime duration, Genres genre, String cover, String info) {
             this.title = title;
             this.id = id;
             this.date = date;
@@ -66,11 +63,11 @@ public class Cancion {
             this.duration = duration;
         }
     
-        public String getGenre() {
+        public Genres getGenre() {
             return genre;
         }
     
-        public void setGenre(String genre) {
+        public void setGenre(Genres genre) {
             this.genre = genre;
         }
     
@@ -88,5 +85,12 @@ public class Cancion {
     
         public void setInfo(String info) {
             this.info = info;
-        }     
+        }   
+
+    @Override
+    public String toString() {
+        return "Cancion{" + "title=" + title + ", id=" + id + ", date=" + date + ", duration=" + duration + ", genre=" + genre + ", cover=" + cover + ", info=" + info + '}';
+    }
+        
+        
 }

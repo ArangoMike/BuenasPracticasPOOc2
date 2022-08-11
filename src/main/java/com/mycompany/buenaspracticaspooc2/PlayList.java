@@ -1,7 +1,7 @@
-
 package com.mycompany.buenaspracticaspooc2;
 
-public class PlayList extends Biblioteca{
+public class PlayList extends Biblioteca {
+
     //Public constructor with no parameters
     public PlayList() {
         //
@@ -11,4 +11,5 @@ public class PlayList extends Biblioteca{
     public void addCancion(Cancion cancion) {
         this.getCanciones().add(cancion);
     }
+
 }
