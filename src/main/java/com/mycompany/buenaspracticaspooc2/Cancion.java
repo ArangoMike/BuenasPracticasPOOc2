@@ -86,15 +86,15 @@ public class Cancion {
         public void setInfo(String info) {
             this.info = info;
         }
-    
-    // Create a method to print a song
-    public void printSong() {
-        System.out.println("Titulo: " + title);
-        System.out.println("ID: " + id);
-        System.out.println("Fecha: " + date);
-        System.out.println("Duración: " + duration);
-        System.out.println("Género: " + genre);
-        System.out.println("Carátula: " + cover);
-        System.out.println("Descripción: " + info);
+
+    /**
+     *
+     * metodo ToString de la clase Cancion.
+     */
+    @Override
+    public String toString() {
+        return "Título: " + title + "\nID: " + id + "\nFecha: " + date + "\nDuración: " + duration + "\nGénero: " + genre + "\nCarátula: " + cover + "\nDescripción: " + info ;
     }
+    
+    
 }
