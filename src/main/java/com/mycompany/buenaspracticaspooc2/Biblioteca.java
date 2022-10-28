@@ -1,23 +1,27 @@
 package com.mycompany.buenaspracticaspooc2;
 
-//Imports
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Biblioteca {
 
-    //Create a private arraylist of Cancion objects
+    //Creación protected Arraylist de objeto Canción.
     protected ArrayList<Cancion> canciones = new ArrayList<>();
     // Variable para enumerar las playlist por filtros.
     int n = 0;
+    // Variable usada para capturar datos ingresados por usuario.
+    int op;
+    Scanner in = new Scanner(System.in);
 
-    //Public constructor with no parameters
+    //Constructor sin parametros
     public Biblioteca() {
         //
         ListaCanciones();
     }
 
+    // Método privado donde se crean las canciones de la biblioteca principal.
     private void ListaCanciones() {
 
         Cancion song1 = new Cancion(1001);
@@ -143,7 +147,7 @@ public class Biblioteca {
         }
     }
 
-    // Metodo para filtrar e imprimir en pantalla por genero musical.
+    // Método para imprimir en pantalla las canciones por género musical especificado.
     public void imprimirListaGeneros(Genres genero) {
 
         // Ciclo for para recorrer el ArrayList
@@ -155,6 +159,35 @@ public class Biblioteca {
                 System.out.println((n) + ". ");
                 System.out.println(canciones.get(i).toString());
             }
+        }
+        n = 0;
+    }
+
+    // Metodo para filtrar tipo de genero que se quiera mostrar en pantalla.
+    public void filtroGeneros() {
+        System.out.println("¿Qué genero deseas filtrar?");
+        System.out.println("1.ELECTRONIC");
+        System.out.println("2.POP");
+        System.out.println("3.SALSA");
+        System.out.println("4.JAZZ");
+        System.out.println("ELIJA EL NUMERO DESEADO");
+        op = in.nextInt();
+        switch (op) {
+            case 1:
+                imprimirListaGeneros(Genres.ELECTRONIC);
+                break;
+            case 2:
+                imprimirListaGeneros(Genres.POP);
+                break;
+            case 3:
+                imprimirListaGeneros(Genres.SALSA);
+                break;
+            case 4:
+                imprimirListaGeneros(Genres.JAZZ);
+                break;
+
+            default:
+                throw new AssertionError();
         }
     }
 
@@ -171,15 +204,16 @@ public class Biblioteca {
                 System.out.println(canciones.get(i).toString());
             }
         }
+        if (n == 0) {
+            System.out.println("No hay canciones con este año en la biblioteca.");
+            System.out.println("");
+        }
+        n = 0;
     }
 
-    //Getter and setter
+    //Getter del Arraylist canciones, devuelve todo el arraylist.
     public ArrayList<Cancion> getCanciones() {
         return canciones;
-    }
-
-    public void setCanciones(ArrayList<Cancion> canciones) {
-        this.canciones = canciones;
     }
 
 }
