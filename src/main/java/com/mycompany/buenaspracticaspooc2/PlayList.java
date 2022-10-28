@@ -1,6 +1,5 @@
 package com.mycompany.buenaspracticaspooc2;
 
-// Imports
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -39,6 +38,11 @@ public class PlayList extends Biblioteca {
                 System.out.println("¿seguir agregando canciones al nuevo Playlist?");
                 System.out.println("Responda 1 para si o 2 para no.");
                 desicion = in.nextInt();
+                if ((desicion == 1) || (desicion == 2)) {
+                } else {
+                    System.out.println("-¡ATENCION!- Opción no encontrada");
+                    System.out.println("");
+                }
             }
         } else {
             System.out.println("Playlist ya creada, eliminala para crear una nueva.");
@@ -55,8 +59,22 @@ public class PlayList extends Biblioteca {
             System.out.println((i + 1) + ". ");
             System.out.println(playList.get(i).toString());
         }
+        if (playList.isEmpty()) {
+            System.out.println("-¡ATENCION!- Playlist personalizada sin crear");
+            System.out.println("---------------------------------------------");
+            System.out.println("");
+        } else {
+            System.out.println("¿desea eliminar la playlist?");
+            System.out.println("Responda 1 para si o 2 para no");
+            op = in.nextInt();
+            if (op == 1) {
+                playList.clear();
+                desicion = 1;
+            }
+        }
     }
 
+    // Método para 
     public ArrayList<Cancion> getPlayList() {
         return playList;
     }
